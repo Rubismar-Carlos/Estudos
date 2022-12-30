@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio usando Javascript</title>
+    <style>
+        body {
+            background-color: gray;
+            font: bold 16pt Arial;
+        }
+
+        main {
+            background-color: aquamarine;
+            color: green;
+            text-align: center;
+            margin: auto;
+            max-width: 700px;
+            border: 4px solid black;
+            border-radius: 30px 0px 0px 30px;
+        }
+
+        p {
+            padding: 10px;
+        }
+        #res {
+            margin-top: 10px;
+        }
+        #res1 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Nacionalidade</h1>
+        <p>Para entrar em nosso País, Voce precisa confirmar sua nacionalidade.</p>
+        Qual sua Nacionalidade <input type="text" name="text1" id="txt1">
+        <input type="button" value="Verificar" onclick="verificar()">
+        <div id="res">
+        </div>
+        <p>Nos Confirme seu email <input type="text" value="example@email.com" id="email"> <input type="button" value="Enviar" onclick="enviar()"> </p>
+        <div id="res1">
+        </div>
+    </main>
+
+    <script>
+        function enviar() {
+            var tx2 = window.document.getElementById('#email')
+            var res1 = window.document.querySelector('#res1')
+            res1.innerHTML = 'Obrigado entraremos em contato'
+
+        }
+        function verificar() {
+            var tx1 = window.document.querySelector('#txt1')
+            var res = window.document.querySelector('#res')
+            var país = (tx1.value)  
+            res.innerHTML = `Seu País atual é ${país}`   
+            if (país == 'Russia'){
+                res.innerHTML += '<p>Voce é Russo, Por motivos de seu Presidente não podemos aceitar voce em nosso País </p>'
+                res.innerHTML += '<p>Que seja decretada a paz, um mundo sem guerras. </p>'
+            }
+               else {res.innerHTML += '<p>Voce e Bem vindo em nosso País.</p>'}
+            
+        }
+    </script>
+</body>
+</html>

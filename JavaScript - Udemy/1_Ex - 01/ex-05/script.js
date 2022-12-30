@@ -1,0 +1,1 @@
+console.log ("asd" * 2); // vai retornar NaN "Não e numero"
